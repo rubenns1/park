@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,16 +22,16 @@
 
     <form method="post">
 
-        <div class="card text-center bg-light border-primary">
-            <div class="card-header">
-                Formulário de Aquisição
+        <div class="card text-center bg-light border-primary" style="width: 75rem;">
+            <div class="card-header text-primary">
+                <i class="bi bi-pencil-square text-success fw-bold">&nbsp;&nbsp;</i>Formulário de Aquisição
             </div>
             <div class="card-body">
-                <h5 class="card-title">Alocar veículo a vaga</h5>
+                <h5 class="card-title">Estacionar</h5>
                 <p class="card-text">
 
                 <div class="form-floating mb-3">
-                    <select class="form-select" id="floatingTipo" aria-label="Floating label select example" name="tipo">
+                    <select class="form-select" id="floatingTipo" aria-label="Floating label select example" name="tipo" required>
                         <option selected>Selecione o tipo do veículo</option>
                         <option value="Moto">Moto</option>
                         <option value="Carro">Carro</option>
@@ -40,28 +40,35 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingFabricante" placeholder="Fabricante" name="fabricante">
+                    <input type="text" class="form-control" id="floatingFabricante" placeholder="Fabricante" name="fabricante" required>
                     <label for="floatingFabricante">Fabricante</label>
                 </div>
 
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingModelo" placeholder="Modelo" name="modelo">
+                    <input type="text" class="form-control" id="floatingModelo" placeholder="Modelo" name="modelo" required>
                     <label for="floatingModelo">Modelo</label>
                 </div>
 
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingPlaca" placeholder="Placa" name="placa">
+                    <input type="text" class="form-control" id="floatingPlaca" placeholder="Placa" name="placa" required>
                     <label for="floatingPlaca">Placa</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <select class="form-select" id="floatPermanencia" aria-label="Floating label select example" name="permanencia"required>
+                        <option selected>Selecione o tempo</option>
+                        <option value="30">30 Minutos</option>
+                        <option value="60">1 Hora</option>
+                        <option value="120">2 Horas</option>
+                    </select>
+                    <label for="floatingTipo">Tempo de Permanencia</label>
                 </div>
 
                 <button class="btn btn-success" type="submit">Gravar</button>
                 <a class="btn btn-danger" href="/">Voltar</a>
-
-                </p>
-
-
             </div>
-            <div class="card-footer text-body-secondary">
+
+            <div class="card-footer text-body-secondary" th:text="'now' + ${today}">
                 setFunction
             </div>
         </div>

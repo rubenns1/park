@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,18 +25,22 @@
         <div class="card-body text-center">
             <h5 class="card-title text-center fw-bold">#1</h5>
             <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a class="btn btn-dark border-info" href="#">Pegar Vaga</a>
+            <a class="btn btn-dark border-info" href="/vagas">Pegar Vaga</a>
         </div>
     </div>
 
-    <div class="card text-bg-danger mb-3 shadow-lg" style="width: 18rem; margin-left: 1%;" th:each="veiculo : ${veiculos}">
+    <div class="card text-bg-danger mb-3 shadow-lg" style="width: 18rem; margin-left: 1%;" th:each="veiculo : ${veiculo}">
         <div class="card-header text-center"><i class="bi bi-x-circle"></i>&nbsp;&nbsp;Vaga Indisponível</div>
         <div class="card-body text-center">
-            <h5 class="card-title text-center fw-bold">DEL-0764</h5>
-            <p class="card-text">Fabricante: GM Chevrolet<br>Ano: 2003<br>Cor: Vermelho<br></p>
+            <h5 class="card-title text-center fw-bold" th:text="'Placa: ' + ${veiculo.placa}"/>
+            <span class="card-text" th:text="'Veículo: ' + ${veiculo.tipo}"></span>
+            <br>
+            <span class="card-text" th:text="'Fabricante: ' + ${veiculo.fabricante}"></span>
+
             <a class="btn btn-dark border-info" href="#">getId</a>
         </div>
     </div>
+    </span>
 <!-- FIM DOS CARDS -->
 
 </div>
