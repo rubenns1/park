@@ -17,8 +17,17 @@ public class Veiculos implements Serializable {
 
     private long id;
     private String tipo;
-    private String marca;
+    private String fabricante;
     private String modelo;
+    private String placa;
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
 
     public long getId() {
         return id;
@@ -36,12 +45,12 @@ public class Veiculos implements Serializable {
         this.tipo = tipo;
     }
 
-    public String getMarca() {
-        return marca;
+    public String getFabricante() {
+        return fabricante;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
+    public void setFabricante(String fabricante) {
+        this.fabricante = fabricante;
     }
 
     public String getModelo() {
