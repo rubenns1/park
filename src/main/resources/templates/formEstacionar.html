@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,7 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-lg" data-bs-theme="dark">
     <div class="container-fluid justify-content-center">
-        <a class="navbar-brand fw-bold"><i class="bi bi-car-front-fill text-primary fw-bold"></i>&nbsp;&nbsp;Controle de Estacionamento (getVagas)</a>
+        <a class="navbar-brand fw-bold"><i class="bi bi-car-front-fill text-primary fw-bold"></i>&nbsp;&nbsp;Controle de Estacionamento</a>
     </div>
 </nav>
 
@@ -32,44 +32,44 @@
 
                 <div class="form-floating mb-3">
                     <select class="form-select" id="floatingTipo" aria-label="Floating label select example" name="tipo" required>
-                        <option selected>Selecione o tipo do veículo</option>
                         <option value="Moto">Moto</option>
                         <option value="Carro">Carro</option>
                     </select>
-                    <label for="floatingTipo">Tipo de veículo</label>
+                    <label for="floatingTipo"><i class="text-info">Tipo de veículo</i></label>
                 </div>
 
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="floatingFabricante" placeholder="Fabricante" name="fabricante" required>
-                    <label for="floatingFabricante">Fabricante</label>
+                    <label for="floatingFabricante"><i class="text-info">Fabricante</i></label>
                 </div>
 
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="floatingModelo" placeholder="Modelo" name="modelo" required>
-                    <label for="floatingModelo">Modelo</label>
+                    <label for="floatingModelo"><i class="text-info">Modelo</i></label>
                 </div>
 
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="floatingPlaca" placeholder="Placa" name="placa" required>
-                    <label for="floatingPlaca">Placa</label>
+                    <label for="floatingPlaca"><i class="text-info">Placa</i></label>
                 </div>
 
                 <div class="form-floating mb-3">
-                    <select class="form-select" id="floatPermanencia" aria-label="Floating label select example" name="permanencia"required>
-                        <option selected>Selecione o tempo</option>
-                        <option value="30">30 Minutos</option>
-                        <option value="60">1 Hora</option>
-                        <option value="120">2 Horas</option>
+                    <select class="form-select" id="floatPermanencia" name="permanencia" aria-label="Floating label select example" required>
+                        <option value="00:30:00">30 Minutos</option>
+                        <option value="00:60:00">1 Hora</option>
+                        <option value="01:20:00">2 Horas</option>
                     </select>
-                    <label for="floatingTipo">Tempo de Permanencia</label>
+                    <label for="floatingTipo"><i class="text-info">Tempo de Permanencia</i></label>
                 </div>
 
-                <button class="btn btn-success" type="submit">Gravar</button>
-                <a class="btn btn-danger" href="/">Voltar</a>
+                <a class="btn btn-danger shadow-sm rounded rounded" href="/" style="width: 45% ;"><i class="bi bi-arrow-left-circle-fill">&nbsp;&nbsp;</i>Voltar</a>
+                <button class="btn btn-success shadow rounded" type="submit" style="width: 45%;"><i class="bi bi-check-circle-fill">&nbsp;&nbsp;</i>Gravar</button>
+
             </div>
 
-            <div class="card-footer text-body-secondary" th:text="'now' + ${today}">
-                setFunction
+
+            <div class="card-footer text-body-secondary">
+                <i class="bi bi-coin text-dark">&nbsp;</i>Total de Créditos: <b class="text-danger">R$0.00</b> | <a class="btn btn-dark btn-sm">Comprar</a>
             </div>
         </div>
     </form>

@@ -1,16 +1,14 @@
 package com.park.park.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.sql.Time;
 
 @Entity
 public class Veiculos implements Serializable {
 
-    private static final long serialVersionUID = 1l;
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,6 +18,15 @@ public class Veiculos implements Serializable {
     private String fabricante;
     private String modelo;
     private String placa;
+    private Time permanencia;
+
+    public Time getPermanencia() {
+        return permanencia;
+    }
+
+    public void setPermanencia(Time permanencia) {
+        this.permanencia = permanencia;
+    }
 
     public String getPlaca() {
         return placa;

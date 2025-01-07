@@ -14,7 +14,7 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-lg" data-bs-theme="dark">
     <div class="container-fluid justify-content-center">
-        <a class="navbar-brand fw-bold"><i class="bi bi-car-front-fill text-primary fw-bold"></i>&nbsp;&nbsp;Controle de Estacionamento (getVagas)</a>
+        <a class="navbar-brand fw-bold"><i class="bi bi-car-front-fill text-primary fw-bold"></i>&nbsp;&nbsp;Controle de Estacionamento</a>
     </div>
 </nav>
 <div class="d-flex justify-content-center flex-wrap" style="padding: 1%">
@@ -23,24 +23,30 @@
     <div class="card text-bg-success mb-3" style="width: 18rem; margin-left: 1%;">
         <div class="card-header text-center"><i class="bi bi-check2-circle"></i>&nbsp;&nbsp;Vaga Disponível</div>
         <div class="card-body text-center">
+
+            <i class="d-flex justify-content-center display-1 bi bi-p-circle"></i>
+            <!-- Comentário
             <h5 class="card-title text-center fw-bold">#1</h5>
             <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a class="btn btn-dark border-info" href="/vagas">Pegar Vaga</a>
+            -->
+            
+            <a class="d-dlex justify-content-end btn btn-dark border-info" href="formEstacionar" style="width: 100%">Estacionar</a>
         </div>
     </div>
 
     <div class="card text-bg-danger mb-3 shadow-lg" style="width: 18rem; margin-left: 1%;" th:each="veiculo : ${veiculo}">
-        <div class="card-header text-center"><i class="bi bi-x-circle"></i>&nbsp;&nbsp;Vaga Indisponível</div>
+        <div class="card-header text-center" th:if="${veiculo.tipo} == 'Carro'"><i class="bi bi-car-front-fill text-light fw-bold">&nbsp;&nbsp;</i>Vaga Indisponível</div>
+        <div class="card-header text-center" th:if="${veiculo.tipo} == 'Moto'"><i class="bi bi-bicycle fw-bold">&nbsp;&nbsp;</i>Vaga Indisponível</div>
         <div class="card-body text-center">
             <h5 class="card-title text-center fw-bold" th:text="'Placa: ' + ${veiculo.placa}"/>
-            <span class="card-text" th:text="'Veículo: ' + ${veiculo.tipo}"></span>
+            <span class="card-text fst-italic" th:text="'Veículo: ' + ${veiculo.tipo}"></span><p>
+            <span class="card-text fst-italic" th:text="'Fabricante: ' + ${veiculo.fabricante}"></span><br>
+            <span class="card-text fst-italic" th:text="'Modelo: ' + ${veiculo.modelo}"></span><br>
+            <span class="card-text fst-italic" th:text="'Tempo: ' + ${veiculo.permanencia}"></span>
             <br>
-            <span class="card-text" th:text="'Fabricante: ' + ${veiculo.fabricante}"></span>
-
-            <a class="btn btn-dark border-info" href="#">getId</a>
+            <a class="btn btn-dark border-info" href="#" style="width:100%">Desocupar</a>
         </div>
     </div>
-    </span>
 <!-- FIM DOS CARDS -->
 
 </div>

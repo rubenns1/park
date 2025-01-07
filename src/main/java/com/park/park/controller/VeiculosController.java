@@ -7,14 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import org.thymeleaf.ITemplateEngine;
-import org.thymeleaf.context.WebContext;
-import org.thymeleaf.spring6.SpringTemplateEngine;
-import org.thymeleaf.web.IWebExchange;
-
-import java.io.Writer;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 @Controller
 public class VeiculosController {
@@ -22,9 +14,9 @@ public class VeiculosController {
     @Autowired
     private VeiculosRepository veiculosRepository;
 
-    @RequestMapping("/vagas")
+    @RequestMapping("/formEstacionar")
     public String veiculosController(){
-        return "vagas";
+        return "formEstacionar";
     }
 
     @RequestMapping("/")
@@ -35,9 +27,9 @@ public class VeiculosController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/vagas", method = RequestMethod.POST)
+    @RequestMapping(value = "/formEstacionar", method = RequestMethod.POST)
     public String veiculosController(Veiculos veiculos) {
         veiculosRepository.save(veiculos);
-        return "redirect:/vagas";
+        return "redirect:/";
     }
 }
