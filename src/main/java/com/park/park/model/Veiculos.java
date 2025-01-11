@@ -8,12 +8,13 @@ import java.sql.Time;
 @Entity
 public class Veiculos implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1l;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private long id;
+
+    private int vagaId;
     private String tipo;
     private String fabricante;
     private String modelo;
@@ -66,5 +67,13 @@ public class Veiculos implements Serializable {
 
     public void setModelo(String modelo) {
         this.modelo = modelo;
+    }
+
+    public int getVagaId() {
+        return vagaId;
+    }
+
+    public void setVagaId(int vagaId) {
+        this.vagaId = vagaId;
     }
 }

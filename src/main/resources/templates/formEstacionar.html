@@ -22,6 +22,12 @@
 
     <form method="post">
 
+        <script th:inline="javascript">
+            var getVaga = JSON.parse(sessionStorage.getItem("key"));
+
+            document.write("<input type=\"text\" value="+getVaga+" name=\"vagaId\" hidden />");
+        </script>
+
         <div class="card text-center bg-light border-primary" style="width: 75rem;">
             <div class="card-header text-primary">
                 <i class="bi bi-pencil-square text-success fw-bold">&nbsp;&nbsp;</i>Formulário de Aquisição
